@@ -15,8 +15,15 @@ while j != 0: # Asks for next file until you type 'end'.
         j = 0
     else:
         files.append(entry)
-        name = entry.replace('.log','')
-        names.append(name)
+        if '.log' in entry:
+            name = entry.replace('.log','')
+            names.append(name)
+        elif '.out' in entry:
+            name = entry.replace('.out','')
+            names.append(name)
+        else:
+            print('Files should be in .out or .log format')
+            break
 
 """"Second, script open each file, find the line with 'Sum of electronic and thermal Free Energies' 
 and save energy in Hartree to energies_au list."""
