@@ -76,7 +76,7 @@ for i in range(len(names)):
     content += line
 
 file.write(content)
-
+file.close()
     
     
     
