@@ -7,13 +7,10 @@ run the script from a folder with your .log files """
 
 files = []
 names = []
-j = 1
 
-while j != 0: # Asks for next file until you type 'end'.
-    entry = input("Please, type a name of .log file or type \'end\' for termination and press Enter: \n")
-    if 'end' in entry and len(entry) <= 5: # Trying to cover all options for typing 'end'
-        j = 0
-    else:
+while True: # Asks for next file until you type 'end'.
+    entry = input("Please, type a name of .log file or confirm input with blank line: \n")
+    if '' != entry:
         files.append(entry)
         if '.log' in entry:
             name = entry.replace('.log','')
@@ -24,6 +21,9 @@ while j != 0: # Asks for next file until you type 'end'.
         else:
             print('Files should be in .out or .log format')
             break
+    if entry == '':
+        break
+print('\033[31m Working... \033[0m')
 
 """"Second, script open each file, find the line with 'Sum of electronic and thermal Free Energies' 
 and save energy in Hartree to energies_au list."""
@@ -84,6 +84,7 @@ for i in range(len(names)):
 
 file.write(content)
 file.close()
+print('Done!')
     
     
     
