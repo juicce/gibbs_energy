@@ -19,7 +19,7 @@ while True: # Asks for next file until you type 'end'.
             name = entry.replace('.out','')
             names.append(name)
         else:
-            print('Files should be in .out or .log format')
+            print('Files should be in .out or .log format!')
             break
     if entry == '':
         break
