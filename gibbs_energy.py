@@ -23,7 +23,7 @@ while True: # Asks for next file until you type 'end'.
             break
     if entry == '':
         break
-print('\033[31m Working... \033[0m')
+print('\033[31m Working... \033[0m'+'\n')
 
 """"Second, script open each file, find the line with 'Sum of electronic and thermal Free Energies' 
 and save energy in Hartree to energies_au list."""
